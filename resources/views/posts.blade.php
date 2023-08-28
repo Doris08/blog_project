@@ -12,6 +12,10 @@
                     </a>
                 </h1>
 
+                <p>
+                    <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a>
+                </p>
+
                 <div>
                     {{-- <?= $post->excerpt; ?> --}} {{-- Forma de hacerlo en php sin usar blade --}}
                     {{ $post->excerpt }} {{-- Forma usando blade --}}
