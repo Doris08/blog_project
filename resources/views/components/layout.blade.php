@@ -10,4 +10,6 @@
     {{--</header>--}}
 
     {{ $content }} {{-- Ahora es un blade component pero podría seguirse usando @yield('content') --}}
+
+    
 </body>

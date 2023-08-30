@@ -1,3 +1,9 @@
+{{--@extends('components.layout')
+
+@section('banner')
+    <p>Welcome to the home page.</p>
+@endsection--}}
+
 <x-layout>
 
     <x-slot name="content">
@@ -23,6 +29,10 @@
 
             </article>
         @endforeach {{--<?php endforeach; ?>--}}  
-    </x-slot>   
+    </x-slot>  
 
 </x-layout>
+
+<x-footer>
+    footer 
+</x-footer>
