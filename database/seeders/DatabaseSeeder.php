@@ -17,13 +17,26 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
+        //Se necesitan esotos solo si no se refresca la BD al principio pero se pueden quitar
         User::truncate();
         Category::truncate();
         Post::truncate();
 
-        $user = User::factory()->create();
+        //Usando factories
+        //$user = User::factory()->create();
 
-        $personal = Category::create([
+        $user = User::factory()->create([
+            'name' => 'john Doe'
+        ]);
+
+        //Usando factories para crear un post con su usuario y categoria
+        Post::factory(5)->create([
+            'user_id' => $user->id
+        ]);
+
+
+        // Usando seeders de manera normal 
+        /*$personal = Category::create([
             'name'=> 'Personal',
             'slug'=> 'personal'
         ]);
@@ -61,6 +74,6 @@ class DatabaseSeeder extends Seeder
             'slug'=> 'my-third-post',
             'excerpt'=> '<p>3333333333333333333333333332dsufi sdfuhs fsdhsdu nhfuhsdidufh jsd hfcsu dhfsdu fhvs udfvhsfvsud vfsh d</p>',
             'body'=>'<p>333333333333333333333333333333333333333333333333333333333isdfjisu dfhs dufhsud fhsudvnhs dushudfhws hfuwhh sd sd sd sdfsd fso df shod fhsu dfhgsu dfhus dfus dhfsu dfhsuhdfsudf sduhsdf</p>'
-        ]);
+        ]);*/
     }
 }
