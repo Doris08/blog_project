@@ -24,7 +24,9 @@ class RegisterController extends Controller
 
         User::create($attributes);
 
-        return redirect('/');
+        // Una forma de hacerlo mandando la sesion por separado session()->flash('success', 'Your account has been created.');
+
+        return redirect('/')->with('success', 'Your account has been created.'); // Forma pasando el flash junto con la redirección con metodo with
     }
 }
 
